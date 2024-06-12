@@ -1,0 +1,30 @@
+{
+  "name": "addis_software_test_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/official-heyab/addis_software_test_backend.git"
+  },
+  "author": "heyab getachew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/official-heyab/addis_software_test_backend/issues"
+  },
+  "homepage": "https://github.com/official-heyab/addis_software_test_backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
+  }
+}

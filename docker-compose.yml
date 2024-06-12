@@ -1,0 +1,44 @@
+version: '3.8'
+
+
+services:
+  
+  server:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      
+    container_name: addis_software_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=mongodb
+      - DB_NAME=addis_software_test_database
+      - DB_PORT=27017
+    depends_on:
+      - mongodb
+
+  
+  client:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+    container_name: addis_software_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+
+  
+  mongodb:
+    image: mongo:latest
+    container_name: addis_software_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./../mydata:/data/db
+
+# Volumes define
+volumes: 
+  mydata:
